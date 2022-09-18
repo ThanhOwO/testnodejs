@@ -24,8 +24,9 @@ const connectDB = async () => {
 }
 
  
-
+app.use(express.json())
 app.use('/api/auth', authRouter)
+
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)

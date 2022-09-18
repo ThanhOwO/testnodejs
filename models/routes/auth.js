@@ -20,7 +20,7 @@ router.post('/register', async(req, res) => {
         const user = await User.findOne({username})
 
         if (user)
-        return res.status(400).jason({success: false, message: 'Username already taken'})
+        return res.status(400).json({success: false, message: 'Username already taken'})
 
         //All good to go
         const hashedPassword = await argon2.hash(password)
