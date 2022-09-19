@@ -4,7 +4,7 @@ const app = express()
 const port = 3000
 const mongoose = require('mongoose')
 const authRouter = require('./models/routes/auth')
-
+const postRouter = require('./models/routes/post')
 
 //connect mongodb server
 const connectDB = async () => {
@@ -26,7 +26,7 @@ const connectDB = async () => {
  
 app.use(express.json())
 app.use('/api/auth', authRouter)
-
+app.use('/api/posts', postRouter)
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
